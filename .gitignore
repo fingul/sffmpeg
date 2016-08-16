@@ -1,5 +1,10 @@
 bin/
 *-prefix/
+CMakeFiles/
+include/
+share/
+cmake_install.cmake
+CMakeCache.txt
 
 # Created by https://www.gitignore.io/api/vagrant,osx,linux,python,pycharm
 
