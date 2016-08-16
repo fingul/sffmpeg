@@ -1,4 +1,9 @@
 bin/
+lib/
+etc/
+ssl/
+man/
+sbin/
 *-prefix/
 CMakeFiles/
 include/
@@ -72,7 +77,6 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
 lib64/
 parts/
 sdist/
