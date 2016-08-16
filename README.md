@@ -25,3 +25,11 @@ When the container will exit, you should have your Linux binaries in the `ffmpeg
 
 docker build -t sffmpeg .
 docker run -v `pwd`/bin:/code/bin -t -i sffmpeg bash -c 'export MAKEFLAGS=" -j `cat /proc/cpuinfo|grep cores|wc -l`" && make && cp /code/lib/libebur128.so.1 /code/bin'
+
+
+docker run -v `pwd`/bin:/code/bin -t -i sffmpeg bash
+export MAKEFLAGS=" -j `cat /proc/cpuinfo|grep cores|wc -l`" && make && cp /code/lib/libebur128.so.1 /code/bin
+
+docker run -v `pwd`:/code -t -i sffmpeg bash -c 'export MAKEFLAGS=" -j `cat /proc/cpuinfo|grep cores|wc -l`" && make && cp /code/lib/libebur128.so.1 /code/bin'
+
+docker run -v `pwd`:/code -t -i sffmpeg bash

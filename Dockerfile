@@ -9,7 +9,7 @@ RUN apt-get update \
 
 WORKDIR /code
 
-ADD . /code
+#ADD . /code
 
 #VOLUME /out
 
