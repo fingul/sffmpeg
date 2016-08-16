@@ -29,8 +29,11 @@ docker run -v `pwd`/bin:/code/bin -t -i sffmpeg bash -c 'export MAKEFLAGS=" -j `
 
 docker run -v `pwd`/bin:/code/bin -t -i sffmpeg bash
 
-export MAKEFLAGS=" -j `cat /proc/cpuinfo|grep cores|wc -l`" && make && cp /code/lib/libebur128.so.1 /code/bin
+
 
 docker run -v `pwd`:/code -t -i sffmpeg bash -c 'export MAKEFLAGS=" -j `cat /proc/cpuinfo|grep cores|wc -l`" && make && cp /code/lib/libebur128.so.1 /code/bin'
 
 docker run -v `pwd`:/code -t -i sffmpeg bash
+export MAKEFLAGS=" -j `cat /proc/cpuinfo|grep cores|wc -l`"
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/code/lib
+make
