@@ -5,10 +5,12 @@ RUN apt-get update \
     git build-essential unzip \
     cmake automake libtool libtool-bin pkg-config curl mercurial
 
-RUN git clone https://github.com/fingul/sffmpeg.git
+#RUN git clone https://github.com/fingul/sffmpeg.git
 
 WORKDIR /code
 
-VOLUME /out
+ADD . /code
 
-CMD git pull && make && cp build/bin/{ffmpeg,ffprobe,frmxtract} /out
+#VOLUME /out
+
+#CMD git pull && make && cp build/bin/{ffmpeg,ffprobe,frmxtract} /out

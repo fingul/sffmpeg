@@ -21,3 +21,7 @@ $ docker run --rm -v $PWD/ffmpeg-bin:/ffmpeg-bin sebest/sffmpeg-build
 ```
 
 When the container will exit, you should have your Linux binaries in the `ffmpeg-bin` directory.
+
+
+docker build -t sffmpeg .
+docker run -v `pwd`/bin:/code/bin -t -i sffmpeg bash -c 'export MAKEFLAGS=" -j `cat /proc/cpuinfo|grep cores|wc -l`" && make && cp /code/lib/libebur128.so.1 /code/bin'
